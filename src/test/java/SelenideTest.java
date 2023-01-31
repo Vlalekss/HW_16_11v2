@@ -9,7 +9,7 @@ public class SelenideTest {
 
     @Test
     @DisplayName("Проверка раздела Solution/Enterprise")
-    void GithubTest() {
+    void githubTest() {
         Configuration.baseUrl = "https://github.com";
         open("");
         $$(".HeaderMenu-link").filterBy(text("Solution")).first().hover();
@@ -20,10 +20,11 @@ public class SelenideTest {
 
     @Test
     @DisplayName("Проверка DragAndDrop")
-    public void DragAndDropTest() {
+    public void dragAndDropTest() {
         Configuration.baseUrl = "https://the-internet.herokuapp.com/drag_and_drop";
         open("");
         $("#column-a").dragAndDropTo($("#column-b"));
         $("#column-a").shouldHave(text("B"));
+        $("#column-b").shouldHave(text("A"));
     }
 }
